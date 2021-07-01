@@ -594,7 +594,7 @@ display: block;
     padding: 0;
   }
 
-  .nav-bar-list {
+  .header .nav-bar-list {
     display: none;
   }
 
