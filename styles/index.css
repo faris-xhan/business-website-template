@@ -561,6 +561,10 @@ section.contacts {
 .open-nav {
   display: block;
 }
+  
+.mobile-nav-bar {
+display: block;
+ }
   .container {
     width: 100%;
   }
