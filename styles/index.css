@@ -248,13 +248,13 @@ ul.categories a {
 .about-1-content,
 .about-2-content {
   max-width: 700px;
-  min-width: 500px;
+  min-width: 300px;
   padding: 0 5em;
 }
 
 .about-1-content > h1,
 .about-2-content > h1 {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 300;
 }
 
@@ -266,6 +266,7 @@ ul.categories a {
 .about-1 ul {
   list-style: none;
   display: flex;
+  justify-content: center;
 }
 
 .about-1 ul li {
@@ -541,4 +542,282 @@ section.contacts {
 
 .footer-2 ul a:hover {
   text-decoration: underline;
+}
+
+/* RESPONSIVENESS */
+
+.container {
+  min-width: 400px;
+  border: 1px solid green;
+}
+
+.mobile-nav-bar {
+  display: none;
+}
+.open-nav {
+  display: none;
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2em !important;
+  }
+
+  h2 {
+    font-size: 1.5em !important;
+  }
+
+  p {
+    font-size: 1em !important;
+  }
+
+  .contacts {
+    display: none;
+  }
+
+  .search-bar-input:hover {
+    width: 100%;
+  }
+
+  .nav-bar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar-list {
+    display: none;
+  }
+
+  .nav-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-1 a {
+    margin-right: 120px;
+  }
+
+  .mobile-nav-bar {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0); /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+
+  .mobile-nav-bar-list {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    left: 12%;
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 1em; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    list-style: none;
+  }
+  .mobile-nav-bar-list li a,
+  .close-nav {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+
+  .purchase-btn {
+    color: #fff !important;
+  }
+
+  .active_menu {
+    color: var(--primary-clr) !important;
+  }
+
+  .open-nav {
+    background: transparent;
+    outline: none;
+    border-radius: 3px !important;
+    border: 1px solid var(--dark-clr);
+    position: sticky;
+    top: 10%;
+  }
+
+  .open-nav:hover,
+  .open-nav:focus,
+  .open-nav:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+    background-color: transparent;
+    box-shadow: none !important;
+  }
+  .close-nav {
+    position: absolute;
+    bottom: 0;
+    font-size: 60px;
+    left: 40%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 38px;
+    cursor: pointer;
+  }
+
+  .close-nav:hover,
+  .close-nav:active,
+  .close-nav:focus {
+    color: var(--primary-clr) !important;
+  }
+
+  .intro,
+  .intro * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .intro {
+    padding: 3em 0;
+    text-align: center;
+  }
+
+  .intro ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+  }
+
+  .intro ul * {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .intro ul li {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+
+  .intro i {
+    border: none;
+  }
+
+  /* About */
+  .about * {
+    margin: 0;
+    padding: 0;
+  }
+  .about-1-content,
+  .about-2-content {
+    width: 100px !important;
+    padding: 1em;
+  }
+
+  .about img {
+    display: none;
+  }
+
+  .about-1,
+  .about-2 {
+    padding: 1em;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .about-1 ul {
+    justify-content: center;
+  }
+
+  .about-1 {
+    border-bottom: 1px solid var(--dark-clr);
+  }
+  .about-2 p {
+    padding-bottom: 2em;
+  }
+
+  .read-more-btn {
+    padding: 9px 18px !important;
+    margin-bottom: 2em;
+  }
+
+  /* Services */
+  .services * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .services-1 {
+    padding: 3em 0;
+  }
+  .services-1 ul {
+    flex-direction: column;
+  }
+
+  .services-1 ul li {
+    padding: 3em 1em;
+    margin: 2em;
+  }
+
+  .video-presentation {
+    padding: 100px 0;
+  }
+
+  /* Prices */
+
+  .pricing {
+    flex-direction: column;
+  }
+
+  .pricing > article {
+    padding: 1em;
+    margin: 0;
+  }
+
+  .pricing h1 {
+    font-size: 1.5em !important;
+  }
+
+  .pricing ul {
+    list-style: none;
+  }
+
+  section.contacts {
+    padding: 100px 0;
+    margin: 0;
+  }
+
+  .footer {
+    padding: 1em 0;
+  }
+  .footer-1 {
+    display: none;
+  }
+
+  .footer-2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-2 p {
+    font-size: 9px;
+    padding-bottom: 1em;
+  }
+
+  .footer-2 ul a {
+    font-size: 12px;
+  }
 }
