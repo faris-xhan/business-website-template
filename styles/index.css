@@ -558,6 +558,9 @@ section.contacts {
   display: none;
 }
 @media (max-width: 400px) {
+.open-nav {
+  display: block;
+}
   .container {
     width: 100%;
   }
