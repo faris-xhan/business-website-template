@@ -8,10 +8,3 @@ openNav.onclick = (e) => {
 closeNav.onclick = (e) => {
   nav.style.width = "0";
 };
-
-const navBtns = nav.querySelectorAll("a");
-navBtns.forEach((btn) => {
-  btn.onclick = (e) => {
-    nav.style.width = "0";
-  };
-});
